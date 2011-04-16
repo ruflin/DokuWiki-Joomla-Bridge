@@ -26,7 +26,7 @@ class auth_joomla extends auth_basic {
 	
 	
 	function checkPass($user,$pass){
-	  	$sql = "SELECT password FROM jos_users WHERE username = '$user'";
+	  	$sql = "SELECT password FROM jos_users WHERE username = '$user' AND block=0";
 	  		
 	  	$res = mysql_fetch_array(mysql_query($sql));
 	    	
