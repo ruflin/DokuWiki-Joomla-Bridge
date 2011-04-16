@@ -12,6 +12,13 @@ class auth_joomla extends auth_basic {
 	    $conf['superuser'] = "admin";
 
 	    include_once("../configuration.php");
+	
+		$configuration = new JConfig;
+
+		$mosConfig_host = $configuration->host;
+		$mosConfig_user = $configuration->user;
+		$mosConfig_password = $configuration->password;
+		$mosConfig_db = $configuration->db;
 	    
 	    $conn = mysql_connect($mosConfig_host,$mosConfig_user,$mosConfig_password);
 	    mysql_select_db($mosConfig_db, $conn);
